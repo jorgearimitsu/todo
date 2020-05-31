@@ -7,21 +7,25 @@ const EmptyList = () => (
   </div>
 )
 
-const FilledList = ({tasks}) => (
+const FilledList = ({tasks, removeTask}) => (
   <ul className={styles.list}>
     {tasks.map(task => (
       <li className={styles.task} key={task.id}>
         {task.name}
+
+        <button type='button' onClick={() => removeTask(task.id)}>
+          remove
+        </button>
       </li>
     ))}
   </ul>
 )
 
-const TaskList = ({tasks}) => {
+const TaskList = ({tasks, removeTask}) => {
   if (tasks.length === 0) {
     return <EmptyList />
   } else {
-    return <FilledList tasks={tasks} />
+    return <FilledList tasks={tasks} removeTask={removeTask} />
   }
 }
 

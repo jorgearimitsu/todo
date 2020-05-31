@@ -32,6 +32,12 @@ class Tasks extends Component {
     }))
   }
 
+  removeTaskHandler = (id) => {
+    let filteredTasks = this.state.tasks.filter(task => task.id !== id)
+
+    this.setState({tasks: filteredTasks})
+  }
+
   render() {
     return (
       <div className={styles.tasks}>
@@ -43,7 +49,10 @@ class Tasks extends Component {
           taskName={this.state.taskName}
         />
 
-        <TaskList tasks={this.state.tasks} />
+        <TaskList
+          tasks={this.state.tasks}
+          removeTask={this.removeTaskHandler}
+        />
       </div>
     )
   }
