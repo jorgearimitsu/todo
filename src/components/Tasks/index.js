@@ -6,6 +6,8 @@ class Tasks extends Component {
     return (
       <div className={styles.tasks}>
         <h1>Task Manager</h1>
+
+        <TaskAdd />
       </div>
     )
   }
