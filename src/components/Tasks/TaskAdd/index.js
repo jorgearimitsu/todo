@@ -1,18 +1,20 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const TaskAdd = () => (
-  <div className={styles.taskAdd}>
+const TaskAdd = ({addTaskName, taskName, addTask}) => (
+  <form className={styles.taskAdd} onSubmit={addTask}>
     <input
       className={styles.input}
+      onChange={addTaskName}
       placeholder="type your task"
       type="text"
+      value={taskName}
     />
 
-    <button className={styles.button} type="button">
+    <button className={styles.button}>
       Add
     </button>
-  </div>
+  </form>
 )
 
 export default TaskAdd
