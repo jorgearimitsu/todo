@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import TaskAdd from './TaskAdd'
 import TaskList from './TaskList';
 import styles from './styles.module.css'
@@ -6,9 +7,9 @@ import styles from './styles.module.css'
 class Tasks extends Component {
   state = {
     tasks: [
-      {id: 1, name: 'Make coffee'},
-      {id: 2, name: 'Watch Netflix'},
-      {id: 3, name: 'Sleep'},
+      {id: uuidv4(), name: 'Make coffee'},
+      { id: uuidv4(), name: 'Watch Netflix'},
+      { id: uuidv4(), name: 'Sleep'},
     ]
   }
 
