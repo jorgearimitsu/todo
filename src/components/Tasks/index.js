@@ -7,12 +7,16 @@ import styles from './styles.module.css'
 class Tasks extends Component {
   state = {
     tasks: [
-      { id: uuidv4(), name: 'Make coffee' },
-      { id: uuidv4(), name: 'Watch Netflix' },
-      { id: uuidv4(), name: 'Sleep' },
+      this.buildTask('Make coffee'),
+      this.buildTask('Watch Netflix'),
+      this.buildTask('Sleep'),
     ],
 
     taskName: ''
+  }
+
+  buildTask(name) {
+    return { id: uuidv4(), name, done: false }
   }
 
   taskNameHandler = (e) => {
@@ -25,7 +29,7 @@ class Tasks extends Component {
     this.setState(prevState => ({
       tasks: [
         ...prevState.tasks,
-        { id: uuidv4(), name: this.state.taskName}
+        this.buildTask(this.state.taskName)
       ],
 
       taskName: ''
