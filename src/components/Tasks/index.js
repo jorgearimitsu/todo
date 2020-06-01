@@ -42,6 +42,15 @@ class Tasks extends Component {
     this.setState({tasks: filteredTasks})
   }
 
+  completeTaskHandler = (task) => {
+    task.done = !task.done
+
+    this.setState(prevState => ({
+      tasks: prevState.tasks.filter(prevTask => prevTask.id !== task.id)
+        .concat([task])
+    }))
+  }
+
   render() {
     return (
       <div className={styles.tasks}>
@@ -56,6 +65,7 @@ class Tasks extends Component {
         <TaskList
           tasks={this.state.tasks}
           removeTask={this.removeTaskHandler}
+          completeTask={this.completeTaskHandler}
         />
       </div>
     )

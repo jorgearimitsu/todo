@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const TaskList = ({tasks, removeTask}) => {
+const TaskList = ({tasks, removeTask, completeTask}) => {
   const emptyList = (
     <div className={styles.emptyList}>
       <p>You don't have any task</p>
@@ -12,6 +12,10 @@ const TaskList = ({tasks, removeTask}) => {
     <ul className={styles.list}>
       {tasks.map(task => (
         <li className={styles.task} key={task.id}>
+          <button onClick={() => completeTask(task)} type="button">
+            done
+          </button>
+
           {task.name}
 
           <button type='button' onClick={() => removeTask(task.id)}>
