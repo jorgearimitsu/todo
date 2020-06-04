@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import Header from './Header'
 import TaskAdd from './TaskAdd'
 import TaskList from './TaskList';
 import styles from './styles.module.css'
@@ -54,7 +55,7 @@ class Tasks extends Component {
   render() {
     return (
       <div className={styles.tasks}>
-        <h1>Task Manager</h1>
+        <Header tasks={this.state.tasks} />
 
         <TaskAdd
           addTask={this.addTaskHandler}
