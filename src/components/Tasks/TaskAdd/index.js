@@ -6,7 +6,7 @@ const TaskAdd = ({addTaskName, taskName, addTask}) => (
     <input
       className={styles.input}
       onChange={addTaskName}
-      placeholder="type your task"
+      placeholder="Type your task"
       type="text"
       value={taskName}
     />

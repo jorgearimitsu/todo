@@ -5,24 +5,31 @@
 }
 
 .input {
-  border: 1px solid silver;
-  border-radius: 4px;
+  background: black;
+  border: 1px solid var(--color-space-gray);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  color: snow;
   height: 42px;
   font-size: 16px;
   padding: 12px;
-  width: 100%;
+  width: calc(100% - 60px);
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid deepskyblue;
 }
 
 .input::placeholder {
-  color: lightgray;
-  font-size: 12px;
-  font-style: italic;
+  color: var(--color-space-gray);
+  font-size: 14px;
 }
 
 .button {
-  background: tomato;
+  background: var(--color-dark-charcoal);
   border: none;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   color: white;
   cursor: pointer;
   font: 500 14px 'Montserrat', sans-serif;
