@@ -1,4 +1,6 @@
 import React from 'react'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './styles.module.css'
 
 const TaskList = ({tasks, removeTask, completeTask}) => {
@@ -10,19 +12,36 @@ const TaskList = ({tasks, removeTask, completeTask}) => {
 
   const filledList = (
     <ul className={styles.list}>
-      {tasks.map(task => (
-        <li className={styles.task} key={task.id}>
-          <button onClick={() => completeTask(task)} type="button">
-            done
-          </button>
+      {tasks.map(task => {
+        const taskClass = classNames(styles.task, { [styles.done]: task.done })
 
-          {task.name}
+        return (
+          <li className={taskClass} key={task.id}>
+            <div className={styles.taskInfo}>
+              <button
+                className={styles.completeButton}
+                onClick={() => completeTask(task)}
+                type="button"
+                >
+                <FontAwesomeIcon
+                  icon={task.done ? 'check-circle' : ['far', 'circle']}
+                  />
+              </button>
 
-          <button type='button' onClick={() => removeTask(task.id)}>
-            remove
-          </button>
-        </li>
-      ))}
+              <p className={styles.taskName}>{task.name}</p>
+            </div>
+
+
+            <button
+              className={styles.deleteButton}
+              onClick={() => removeTask(task.id)}
+              type='button'
+            >
+              <FontAwesomeIcon icon="trash-alt" />
+            </button>
+          </li>
+        )
+      })}
     </ul>
   )
 

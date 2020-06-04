@@ -5,13 +5,35 @@
 }
 
 .task {
+  align-items: center;
   background: navajowhite;
   border-radius: 4px;
   color: darkcyan;
-  height: 42px;
-  line-height: 42px;
-  margin-bottom: 12px;
-  padding: 0 42px;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 0 24px;
+  position: relative;
+}
+
+li.done {
+  background: dimgray;
+  color: white;
+}
+
+.done .taskName {
+  text-decoration: line-through;
+}
+
+.taskInfo {
+  align-items: center;
+  display: flex;
+}
+
+.taskName {
+  display: inline-block;
+  margin: 0;
 }
 
 .emptyList {
@@ -19,4 +41,15 @@
   border-radius: 4px;
   color: mistyrose;
   padding: 12px;
+}
+
+.completeButton {
+  color: azure;
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.deleteButton {
+  color: tomato;
+  font-size: 18px;
 }
