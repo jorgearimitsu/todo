@@ -10,7 +10,7 @@ const Header = ({tasks, clearTasks}) => {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>My Tasks</h1>
+      <h1 className={styles.title}>To Do</h1>
 
       <div className={styles.taskInfo}>
         <TaskCounter
