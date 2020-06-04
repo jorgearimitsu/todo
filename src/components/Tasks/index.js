@@ -52,11 +52,16 @@ class Tasks extends Component {
     }))
   }
 
+  clearTasksHandler = () => {
+    this.setState({tasks: []})
+  }
+
   render() {
     return (
       <div className={styles.tasks}>
         <Header
           tasks={this.state.tasks}
+          clearTasks={this.clearTasksHandler}
         />
 
         <TaskAdd
