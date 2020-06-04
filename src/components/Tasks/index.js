@@ -9,8 +9,9 @@ class Tasks extends Component {
   state = {
     tasks: [
       this.buildTask('Make coffee'),
-      this.buildTask('Watch Netflix'),
+      this.buildTask('Code'),
       this.buildTask('Sleep'),
+      this.buildTask('Repeat'),
     ],
 
     taskName: ''
