@@ -13,7 +13,6 @@ class Tasks extends Component {
       this.buildTask('Sleep'),
       this.buildTask('Repeat'),
     ],
-
     taskName: ''
   }
 
@@ -56,7 +55,9 @@ class Tasks extends Component {
   render() {
     return (
       <div className={styles.tasks}>
-        <Header tasks={this.state.tasks} />
+        <Header
+          tasks={this.state.tasks}
+        />
 
         <TaskAdd
           addTask={this.addTaskHandler}
