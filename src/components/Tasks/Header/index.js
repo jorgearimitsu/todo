@@ -8,7 +8,7 @@ const Header = ({tasks}) => {
 
       {tasks.length > 0 && (
         <p className={styles.remaining}>
-          {tasks.length} tasks remaining
+          {tasks.length} {tasks.length === 1 ? 'task' : 'tasks'} remaining
         </p>
       )}
     </header>
