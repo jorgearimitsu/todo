@@ -1,14 +1,15 @@
 import React from 'react'
 import TaskCounter from './TaskCounter'
+import Settings from './Settings'
 import styles from './styles.module.css'
 
 
-const Header = ({tasks}) => {
+const Header = ({tasks, clearTasks}) => {
   const completedTasks = tasks.filter(task => task.done === true)
   const remainingTasks = tasks.filter(task => task.done === false)
 
   return (
-    <header>
+    <header className={styles.header}>
       <h1 className={styles.title}>My Tasks</h1>
 
       <div className={styles.taskInfo}>
@@ -23,6 +24,7 @@ const Header = ({tasks}) => {
         />
       </div>
 
+      <Settings clearTasks={clearTasks} />
     </header>
   )
 }

@@ -1,5 +1,10 @@
-.title {
+.header {
   color: snow;
+  position: relative;
+  max-width: 402px;
+}
+
+.title {
   margin-bottom: 12px;
 }
 
@@ -11,3 +16,5 @@
 .remaining {
   margin-right: 12px;
 }
+
+
