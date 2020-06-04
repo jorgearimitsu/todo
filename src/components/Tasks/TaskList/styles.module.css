@@ -1,14 +1,15 @@
 .list {
   list-style: none;
   margin: 0;
+  max-width: 800px;
   padding: 0;
 }
 
 .task {
   align-items: center;
-  background: navajowhite;
+  background: black;
   border-radius: 4px;
-  color: darkcyan;
+  color: snow;
   display: flex;
   height: 60px;
   justify-content: space-between;
@@ -18,8 +19,8 @@
 }
 
 li.done {
-  background: dimgray;
-  color: white;
+  background: var(--color-dark-charcoal);
+  color: snow;
 }
 
 .done .taskName {
@@ -37,10 +38,14 @@ li.done {
 }
 
 .emptyList {
-  background: salmon;
+  background: black;
   border-radius: 4px;
-  color: mistyrose;
+  color: snow;
   padding: 12px;
+}
+
+.emptyListIcon {
+  margin-right: 6px;
 }
 
 .completeButton {
@@ -50,6 +55,6 @@ li.done {
 }
 
 .deleteButton {
-  color: tomato;
+  color: snow;
   font-size: 18px;
 }

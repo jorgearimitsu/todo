@@ -5,9 +5,13 @@ import styles from './styles.module.css'
 
 const TaskList = ({tasks, removeTask, completeTask}) => {
   const emptyList = (
-    <div className={styles.emptyList}>
-      <p>You don't have any task</p>
-    </div>
+      <p className={styles.emptyList}>
+        <FontAwesomeIcon
+          icon="exclamation-triangle"
+          className={styles.emptyListIcon}
+        />
+        You don't have any task
+      </p>
   )
 
   const filledList = (
@@ -22,13 +26,15 @@ const TaskList = ({tasks, removeTask, completeTask}) => {
                 className={styles.completeButton}
                 onClick={() => completeTask(task)}
                 type="button"
-                >
+              >
                 <FontAwesomeIcon
                   icon={task.done ? 'check-circle' : ['far', 'circle']}
-                  />
+                />
               </button>
 
-              <p className={styles.taskName}>{task.name}</p>
+              <p className={styles.taskName}>
+                {task.name}
+              </p>
             </div>
 
 
